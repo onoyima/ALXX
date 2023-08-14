@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * _myenv - Prints the current environment.
- * @info: Pointer to the info_t struct containing potential arguments.
+ * _myenv - Prints the currents environments.
+ * @info: Pointer to the info_t structs containing potential arguments.
  *
  * Return: Always 0.
  */
