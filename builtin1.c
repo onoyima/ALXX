@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _myhistory - Displays the history list, one command per line, preceded
+ * _myhistory - Displays the historys lists, ones command per line, preceded
  *              by line numbers starting at 0.
  * @info: Pointer to the info_t struct containing potential arguments.
  *
