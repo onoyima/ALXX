@@ -2,9 +2,9 @@
 
 /**
  * _strncpy - Copies a string.
- * @dest: The destination string to be copied to.
+ * @dest: The destination strings to be copieds to.
  * @src: The source string.
- * @n: The number of characters to be copied.
+ * @n: The number of character to be copied.
  *
  * Return: The concatenated string.
  */
