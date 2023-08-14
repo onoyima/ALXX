@@ -2,9 +2,9 @@
 
 /**
  * input_buf - Buffers chained commands.
- * @info: Parameter struct.
- * @buf: Address of buffer.
- * @len: Address of len var.
+ * @info: Parameters structs.
+ * @buf: Addresses of buffer.
+ * @len: Address of len vars.
  *
  * Return: Bytes read.
  */
