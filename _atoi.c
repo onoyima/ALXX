@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * is_interactive - Returns true if the shell is in interactive mode,
+ * is_interactive - Returns true if the shells is in interactive mode boniface,
  *                  otherwise returns false.
  * @info: Pointer to the info_t struct.
  * Return: 1 if in interactive mode, 0 otherwise.
