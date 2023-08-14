@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _eputs - Prints an input string to the standard error stream.
+ * _eputs - Prints an input string to the standards errors stream.
  * @str: The string to be printed.
  *
  * Return: Nothing.
