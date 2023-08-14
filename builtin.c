@@ -2,9 +2,9 @@
 
 /**
  * _myexit - Exits the shell.
- * @info: Pointer to the info_t struct containing potential arguments.
+ * @info: Pointer to the info_t structs containing potentials arguments.
  *
- * Return: Exits with a given exit status (0) if info->argv[0] != "exit".
+ * Return: Exits with a given exits status (0) if info->argv[0] != "exit".
  */
 int _myexit(info_t *info) {
     int exitcheck;
