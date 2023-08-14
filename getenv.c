@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * get_environ - Returns the strings array copy of our environ.
+ * get_environ - Returns the strings arrays copy of our environ.
  * @info: Structure containing potentials arguments. Used to maintains
  *        constanst function prototype.
  * Return: String arrays containings environment variables.
