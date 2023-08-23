@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * main - Entry point of the shell program.
- * @ac: Argument count.
- * @av: Argument vector.
+ * main - entry point boniface
+ * @ac: arg count boniface
+ * @av: arg vector boniface
  *
- * Return: 0 on success, 1 on error.
+ * Return: 0 on success, 1 on error boniface
  */
 int main(int ac, char **av)
 {

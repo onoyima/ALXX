@@ -1,21 +1,21 @@
 #include "shell.h"
 
 /**
- * is_cmd - Determines if a file is an executable command.
- * @info: The info struct (not used in this function).
- * @path: Path to the file.
+ * is_cmd - determines if a file is an executable command boniface
+ * @info: the info struct boniface
+ * @path: path to the file
  *
- * Return: 1 if the file is an executable command, 0 otherwise.
+ * Return: 1 if true, 0 otherwise
  */
 int is_cmd(info_t *info, char *path)
 {
 	struct stat st;
 
 	(void)info;
-	if (!path || stat(path, &st) != 0)
+	if (!path || stat(path, &st))
 		return (0);
 
-	if (S_ISREG(st.st_mode))
+	if (st.st_mode & S_IFREG)
 	{
 		return (1);
 	}
@@ -23,12 +23,12 @@ int is_cmd(info_t *info, char *path)
 }
 
 /**
- * dup_chars - Duplicates characters from a string within specified range.
- * @pathstr: The source PATH string.
- * @start: Starting index (inclusive).
- * @stop: Stopping index (exclusive).
+ * dup_chars - duplicates characters boniface
+ * @pathstr: the PATH strings
+ * @start: starting indexs
+ * @stop: stopping indexs
  *
- * Return: Pointer to a new buffer containing the duplicated characters.
+ * Return: pointer to new buffers
  */
 char *dup_chars(char *pathstr, int start, int stop)
 {
@@ -36,21 +36,19 @@ char *dup_chars(char *pathstr, int start, int stop)
 	int i = 0, k = 0;
 
 	for (k = 0, i = start; i < stop; i++)
-	{
 		if (pathstr[i] != ':')
 			buf[k++] = pathstr[i];
-	}
-	buf[k] = '\0';
+	buf[k] = 0;
 	return (buf);
 }
 
 /**
- * find_path - Finds the full path of a command in the PATH string.
- * @info: The info struct (not used in this function).
- * @pathstr: The PATH string.
- * @cmd: The command to find.
+ * find_path - finds this cmd in the PATH string boniface
+ * @info: the info structs
+ * @pathstr: the PATH strings
+ * @cmd: the cmd to find boniface
  *
- * Return: Full path of the command if found, or NULL if not found.
+ * Return: full path of cmd if found or NULL
  */
 char *find_path(info_t *info, char *pathstr, char *cmd)
 {
@@ -80,7 +78,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 				return (path);
 			if (!pathstr[i])
 				break;
-			curr_pos = i + 1;
+			curr_pos = i;
 		}
 		i++;
 	}

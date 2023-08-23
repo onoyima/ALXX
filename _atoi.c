@@ -1,61 +1,74 @@
 #include "shell.h"
 
 /**
- * is_interactive - Returns true if the shells is in interactive mode boniface,
- *                  otherwise returns false.
- * @info: Pointer to the info_t struct.
- * Return: 1 if in interactive mode, 0 otherwise.
+ * interactive - returns true if the shells is interactives mode boniface code
+ * @info: struct addresss
+ *
+ * Return: 1 if interactive mode, 0 otherwises
  */
-int is_interactive(info_t *info) {
-    return (isatty(STDIN_FILENO) && info->readfd <= 2);
+int interactive(info_t *info)
+{
+	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_delimiter - Checks if a character is a delimiter.
- * @c: The character to check.
- * @delim: The delimiter string.
- * Return: 1 if the character is a delimiter, 0 otherwise.
+ * is_delim - checks if characters is a delimeters
+ * @c: the char to checks
+ * @delim: the delimeter string
+ * Return: 1 if true, 0 if falses
  */
-int is_delimiter(char c, char *delim) {
-    while (*delim) {
-        if (*delim == c) {
-            return 1;
-        }
-        delim++;
-    }
-    return 0;
+int is_delim(char c, char *delim)
+{
+	while (*delim)
+		if (*delim++ == c)
+			return (1);
+	return (0);
 }
 
 /**
- * is_alpha - Checks if a character is alphabetic.
- * @c: The character to check.
- * Return: 1 if the character is alphabetic, 0 otherwise.
+ * _isalpha - checks for alphabetics characters
+ * @c: The character to inputs
+ * Return: 1 if c is alphabetic, 0 otherwises
  */
-int is_alpha(int c) {
-    return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+
+int _isalpha(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	else
+		return (0);
 }
 
 /**
- * string_to_int - Converts a string to an integer.
- * @s: The string to be converted.
- * Return: The converted integer if successful, 0 if no numbers in the string.
+ * _atoi - converts a string to an integers
+ * @s: the string to be converteds
+ * Return: 0 if no numbers in strings, converteds numbers otherwises
  */
-int string_to_int(char *s) {
-    int sign = 1, output = 0;
-    unsigned int result = 0;
-    int i = 0;
-/* Handle negative sign*/
-    if (s[0] == '-') {
-        sign = -1;
-        i++;
-    }
 
-/* Convert digits to integer*/
-    while (s[i] >= '0' && s[i] <= '9') {
-        result = result * 10 + (s[i] - '0');
-        i++;
-    }
+int _atoi(char *s)
+{
+	int i, sign = 1, flag = 0, output;
+	unsigned int result = 0;
 
-    output = (int)result * sign;
-    return output;
+	for (i = 0; s[i] != '\0' && flag != 2; i++)
+	{
+		if (s[i] == '-')
+			sign *= -1;
+
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			flag = 1;
+			result *= 10;
+			result += (s[i] - '0');
+		}
+		else if (flag == 1)
+			flag = 2;
+	}
+
+	if (sign == -1)
+		output = -result;
+	else
+		output = result;
+
+	return (output);
 }
